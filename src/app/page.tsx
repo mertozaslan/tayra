@@ -78,7 +78,7 @@ export default function Home() {
     const isLeftSwipe = distanceX > 30;
     const isRightSwipe = distanceX < -30;
 
-    console.log('Swipe detected in easter egg:', { distanceX, isLeftSwipe, isRightSwipe });
+    console.log('Swipe detasdasdasdected in easter egg:', { distanceX, isLeftSwipe, isRightSwipe });
 
     if (isLeftSwipe) {
       // Sola kaydır - sonraki slide
