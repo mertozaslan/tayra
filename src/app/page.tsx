@@ -71,32 +71,27 @@ export default function Home() {
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    // Sadece easter egg açıkken touch event'leri çalışsın
+    if (!showEasterEgg || !touchStart || !touchEnd) return;
     
     const distanceX = touchStart.x - touchEnd.x;
-    const distanceY = touchStart.y - touchEnd.y;
     const isLeftSwipe = distanceX > 30;
     const isRightSwipe = distanceX < -30;
-    const isUpSwipe = distanceY > 30;
-    const isDownSwipe = distanceY < -30;
 
-    console.log('Swipe detected:', { distanceX, distanceY, isLeftSwipe, isRightSwipe, showEasterEgg });
+    console.log('Swipe detected in easter egg:', { distanceX, isLeftSwipe, isRightSwipe });
 
-    if (showEasterEgg) {
-      // Easter egg modunda swiper
-      if (isLeftSwipe) {
-        // Sola kaydır - sonraki slide
-        const nextSlide = (currentSlide + 1) % easterEggData.length;
-        setCurrentSlide(nextSlide);
-        playMusic(easterEggData[nextSlide].music);
-        console.log('Next slide:', nextSlide);
-      } else if (isRightSwipe) {
-        // Sağa kaydır - önceki slide
-        const prevSlide = currentSlide === 0 ? easterEggData.length - 1 : currentSlide - 1;
-        setCurrentSlide(prevSlide);
-        playMusic(easterEggData[prevSlide].music);
-        console.log('Prev slide:', prevSlide);
-      }
+    if (isLeftSwipe) {
+      // Sola kaydır - sonraki slide
+      const nextSlide = (currentSlide + 1) % easterEggData.length;
+      setCurrentSlide(nextSlide);
+      playMusic(easterEggData[nextSlide].music);
+      console.log('Next slide:', nextSlide);
+    } else if (isRightSwipe) {
+      // Sağa kaydır - önceki slide
+      const prevSlide = currentSlide === 0 ? easterEggData.length - 1 : currentSlide - 1;
+      setCurrentSlide(prevSlide);
+      playMusic(easterEggData[prevSlide].music);
+      console.log('Prev slide:', prevSlide);
     }
   };
 
