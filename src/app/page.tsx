@@ -97,17 +97,6 @@ export default function Home() {
         playMusic(easterEggData[prevSlide].music);
         console.log('Prev slide:', prevSlide);
       }
-    } else {
-      // Normal modda eski sistem
-      if (isUpSwipe) {
-        setShowEasterEgg(true);
-        setCurrentSlide(2); // Furkan
-        playMusic('/fino.mp3');
-      } else if (isDownSwipe) {
-        setShowEasterEgg(true);
-        setCurrentSlide(0); // Kaan
-        playMusic('/para.mp3');
-      }
     }
   };
 
