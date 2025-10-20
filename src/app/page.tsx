@@ -71,7 +71,7 @@ export default function Home() {
   };
 
   const handleTouchEnd = () => {
-    // Sadece easter egg açıkken touch event'leri çalışsın
+    // Sadece easter egg açıkken touch event'leri çalzzışsın
     if (!showEasterEgg || !touchStart || !touchEnd) return;
     
     const distanceX = touchStart.x - touchEnd.x;
