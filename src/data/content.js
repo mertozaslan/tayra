@@ -1,11 +1,11 @@
-import part1 from '../assets/brand/logo-part-1.jpg'
-import part2 from '../assets/brand/logo-part-2.jpg'
-import ecoLogo from '../assets/work/ecopotamia-logo.jpg'
-import ecoTayra from '../assets/work/ecopotamia-tayra.jpg'
-import ecoCover from '../assets/work/ecopotamia-cover.jpg'
-import agLogo from '../assets/work/ankaragucu-logo.jpg'
-import agTayra from '../assets/work/ankaragucu-tayra.jpg'
-import agCover from '../assets/work/ankaragucu-cover.jpg'
+import part1 from '../assets/brand/logo-part-1.webp'
+import part2 from '../assets/brand/logo-part-2.webp'
+import ecoLogo from '../assets/work/ecopotamia-logo.webp'
+import ecoTayra from '../assets/work/ecopotamia-tayra.webp'
+import ecoCover from '../assets/work/ecopotamia-cover.webp'
+import agLogo from '../assets/work/ankaragucu-logo.webp'
+import agTayra from '../assets/work/ankaragucu-tayra.webp'
+import agCover from '../assets/work/ankaragucu-cover.webp'
 
 export const brand = {
   name: 'Tayra Interactive',
@@ -13,6 +13,16 @@ export const brand = {
   description: '360° yaratıcı iletişim ajansı.',
   handle: '@tayrainteractive',
   instagram: 'https://www.instagram.com/tayrainteractive/',
+  url: 'https://tayrainteractive.com',
+}
+
+// İletişim bilgileri: doldurulan alanlar sitede, yasal metinlerde ve Google'ın okuduğu yapılandırılmış veride görünür.
+// Boş (null) bırakılanlar hiçbir yerde gösterilmez.
+export const contact = {
+  email: null, // örn. 'merhaba@tayrainteractive.com'
+  phone: null, // örn. '+90 5xx xxx xx xx'
+  address: null, // örn. 'Çankaya, Ankara'
+  company: null, // yasal ünvan, örn. 'Tayra Interaktif Medya Ltd. Şti.'
 }
 
 // Manifesto taslak; ajansın kendi cümleleriyle değiştirilecek. Yıldızlı kelimeler yeşil vurgulanır.
@@ -73,9 +83,9 @@ export const services = [
 
 export const marquee = ['Çekim', 'Kurgu', 'Kimlik', 'Sosyal Medya', 'Drone', 'Marka Filmi']
 
-// E-posta / telefon gelince bağlantılar güncellenecek; şimdilik hepsi Instagram'a gidiyor.
+// İletişim formundaki konu seçenekleri
 export const intents = [
-  { q: 'Proje mi var?', a: 'Anlat, dinleyelim', href: brand.instagram },
-  { q: 'Selam mı vereceksin?', a: 'Çay bizden', href: brand.instagram },
-  { q: 'Ekibe mi katılacaksın?', a: 'Portfolyonu gönder', href: brand.instagram },
+  { q: 'Proje mi var?', a: 'Anlat, dinleyelim', subject: 'Yeni proje' },
+  { q: 'Selam mı vereceksin?', a: 'Çay bizden', subject: 'Selam' },
+  { q: 'Ekibe mi katılacaksın?', a: 'Portfolyonu gönder', subject: 'Ekibe katılım' },
 ]

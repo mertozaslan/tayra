@@ -3,32 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Tayra Interactive — Premium iş, mahalle samimiyeti.</title>
-    <meta name="description" content="Tayra Interactive: 360° yaratıcı iletişim ajansı. Çekim, kurgu, drone, marka kimliği ve sosyal medya yönetimi." />
+    <!-- Başlık, açıklama, canonical ve robots her sayfa için build sırasında src/pages/meta.js'ten doldurulur -->
+    <title>Tayra Interactive | Yaratıcı İletişim Ajansı: Çekim, Kurgu, Kimlik</title>
+    <meta name="description" content="Tayra Interactive, 360° yaratıcı iletişim ajansı. Marka filmi çekimi, kurgu, drone, marka kimliği ve sosyal medya yönetimi. Premium iş, mahalle samimiyeti." />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://tayrainteractive.com/" />
     <meta name="theme-color" content="#000000" />
+
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="tr_TR" />
     <meta property="og:site_name" content="Tayra Interactive" />
-    <meta property="og:title" content="Tayra Interactive — 360° yaratıcı iletişim ajansı" />
-    <meta property="og:description" content="Çekim, kurgu, drone, marka kimliği ve sosyal medya. Premium iş, mahalle samimiyeti." />
+    <meta property="og:url" content="https://tayrainteractive.com/" />
+    <meta property="og:title" content="Tayra Interactive | Yaratıcı İletişim Ajansı: Çekim, Kurgu, Kimlik" />
+    <meta property="og:description" content="Tayra Interactive, 360° yaratıcı iletişim ajansı. Marka filmi çekimi, kurgu, drone, marka kimliği ve sosyal medya yönetimi. Premium iş, mahalle samimiyeti." />
+    <meta property="og:image" content="https://tayrainteractive.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tayra Interactive logosu: 360° yaratıcı iletişim ajansı" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Tayra Interactive",
-        "slogan": "Premium iş, mahalle samimiyeti.",
-        "description": "360° yaratıcı iletişim ajansı: çekim, kurgu, drone, marka kimliği ve sosyal medya.",
-        "knowsAbout": ["Video prodüksiyon", "Kurgu", "Drone çekimi", "Marka kimliği", "Sosyal medya yönetimi"],
-        "sameAs": ["https://www.instagram.com/tayrainteractive/"]
-      }
-    </script>
+    <meta name="twitter:image" content="https://tayrainteractive.com/og-image.jpg" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+    <script>document.documentElement.classList.add('js')</script>
   </head>
-  <body>
+  <body data-page="home">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

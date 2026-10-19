@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { brand, works } from '../data/content.js'
+import Img from '../components/Img.jsx'
 
 // Büyük yazılı iş listesi, "Müşteri, İş" düzeni (Somesuch); masaüstünde imleci takip eden önizleme
 export default function Work() {
@@ -38,7 +39,7 @@ export default function Work() {
               </span>
               <span className="work-roles">{w.roles.join(' · ')}</span>
               <span className="work-year">{w.year}</span>
-              <img className="work-thumb" src={w.cover} alt="" loading="lazy" />
+              <Img className="work-thumb" src={w.cover} alt={`${w.client}, ${w.title}: ${w.roles.join(', ')} çalışmasından kare`} loading="lazy" width="1200" height="1500" />
             </a>
           </li>
         ))}

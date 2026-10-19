@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { reel } from '../data/content.js'
+import Img from '../components/Img.jsx'
 
 // Kaydırdıkça küçük çerçeveden tam ekrana açılan showreel bandı (W+K); video varsa tıklayınca tam ekran oynar (Dogstudio)
 export default function Reel() {
@@ -44,7 +45,7 @@ export default function Reel() {
         <div ref={frame} className="reel-frame">
           {reel.video
             ? <video src={reel.video} poster={reel.poster} autoPlay muted loop playsInline />
-            : <img src={reel.poster} alt="Tayra showreel karesi" />}
+            : <Img src={reel.poster} alt="Tayra Interactive showreel: Ecopotamia tanıtım filminden bir kare" loading="lazy" width="1200" height="1500" />}
           <button className="reel-btn" onClick={() => reel.video && setPlaying(true)} disabled={!reel.video}>
             <span className="reel-dot" aria-hidden="true" />
             {reel.video ? 'Reeli izle' : 'Showreel · yakında'}

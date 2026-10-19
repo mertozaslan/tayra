@@ -17,7 +17,7 @@ export default function Hero() {
           className="hero-mark"
           width="4665"
           height="1721"
-          fetchpriority="high"
+          fetchPriority="high"
         />
         <span className="hero-label">interactive</span>
       </h1>
