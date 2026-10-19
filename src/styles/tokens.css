@@ -1,0 +1,25 @@
+/* Tayra marka değerleri — Instagram kimliğinden (renkler göz kararı, kesinleştirilecek) */
+:root {
+  --lime: #b2ef2b;
+  --ink-brand: #1b1b1b;
+
+  --bg: #000;
+  --panel: #0d0d0d;
+  --ink: #f4f2ef;
+  --dim: rgba(244, 242, 239, .42);
+  --line: rgba(244, 242, 239, .16);
+  --accent: var(--lime);
+  --on-accent: var(--ink-brand);
+
+  --display: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+  --sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Araştırmadaki ajanslarda baskın eğriler: expo-out (W+K) ve in-out (Somesuch) */
+  --ease-out: cubic-bezier(.19, 1, .22, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
+
+  --gutter: clamp(16px, 3.4vw, 48px);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
