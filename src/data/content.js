@@ -42,6 +42,8 @@ export const manifesto = manifestoText.split(' ').map((w) => {
 // Showreel videosu gelince `video` alanına eklenir; o zamana kadar görsel gösterilir.
 export const reel = { poster: ecoTayra, video: null }
 
+// İş detay sayfaları (/isler/<slug>) bu listeden üretilir. `summary` paragrafları detay sayfasında görünür
+// (Instagram açıklaması olmayanlar taslak); `instagram` varsa ilgili gönderiye, yoksa profile bağlanır.
 export const works = [
   {
     slug: 'veloura',
@@ -52,6 +54,11 @@ export const works = [
     roles: ['Logo', 'Ambalaj', 'Kurumsal Kimlik'],
     cover: velCover,
     images: [velCover, velTayra, velLogo],
+    summary: [
+      'Bir kutunun üzerinde, bir kartın köşesinde, bir buketin etiketinde… Veloura Atelier için tasarladığımız kimlik, markanın zarafetini her detayda sürdürüyor.',
+      'Logodan ambalaja, kartvizitten zarfa kadar her yüzeyde aynı sade ve incelikli dil.',
+    ],
+    instagram: 'https://www.instagram.com/p/DeweBGZtPTB/',
     isNew: true,
   },
   {
@@ -63,6 +70,11 @@ export const works = [
     roles: ['Strateji', 'İçerik', 'Çekim', 'Kurgu'],
     cover: wlCover,
     images: [wlCover, wlTayra, wlSocial],
+    summary: [
+      'Waterland Car Wash’ın sosyal medya yönetimini; içerik planlamasından tasarıma, video çekiminden kurguya uzanan bütünlüklü bir yaklaşımla yürütüyoruz.',
+      'Markanın uzmanlığını görünür kılan, kendine özgü dilini güçlendiren içerikler üretiyoruz.',
+    ],
+    instagram: 'https://www.instagram.com/p/DerJLVWNTXM/',
     isNew: true,
   },
   {
@@ -74,6 +86,7 @@ export const works = [
     roles: ['Çekim', 'Kurgu'],
     cover: agTayra,
     images: [agLogo, agCover, agTayra],
+    summary: ['Karlı sahada, sabahın ilk ışığında Ankara Gücü’nün antrenmanını çektik ve kurguladık.'],
     isNew: true,
     featured: true,
   },
@@ -86,6 +99,7 @@ export const works = [
     roles: ['Drone', 'Çekim', 'Kurgu'],
     cover: ecoLogo,
     images: [ecoLogo, ecoCover, ecoTayra],
+    summary: ['Ecopotamia çiftliğini havadan ve yerden çektik; toprağın ritmini kurguyla bir tanıtım filmine dönüştürdük.'],
     isNew: true,
     featured: true,
   },
@@ -98,6 +112,7 @@ export const works = [
     roles: ['Logo', 'Tipografi'],
     cover: part2,
     images: [part1, part2],
+    summary: ['Ajansın yeni logosunu ve tipografisini kendimiz tasarladık.'],
   },
 ]
 

@@ -3,12 +3,13 @@ import wordmark from '../assets/brand/tayra-wordmark.svg'
 import { brand } from '../data/content.js'
 
 const links = [
-  { href: '#isler', label: 'İşler' },
+  { href: '/isler', label: 'İşler' },
   { href: '#hizmetler', label: 'Hizmetler' },
   { href: '#iletisim', label: 'İletişim' },
 ]
 
 export default function Header({ base = '', solid = false }) {
+  const to = (href) => (href.startsWith('#') ? base + href : href) // sayfa adresleri olduğu gibi, bölüm bağlantıları ana sayfaya
   const [past, setPast] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -34,7 +35,7 @@ export default function Header({ base = '', solid = false }) {
           <img src={wordmark} alt="" />
         </a>
         <nav className="site-nav" aria-label="Ana menü">
-          {links.map((l) => <a key={l.href} href={base + l.href}>{l.label}</a>)}
+          {links.map((l) => <a key={l.href} href={to(l.href)}>{l.label}</a>)}
         </nav>
         <a href={`${base}#iletisim`} className="pill">Projeni anlat</a>
         <button
@@ -49,7 +50,7 @@ export default function Header({ base = '', solid = false }) {
       </header>
       <div id="mobile-menu" className={`mobile-menu${open ? ' is-open' : ''}`} aria-hidden={!open}>
         <nav>
-          {links.map((l) => <a key={l.href} href={base + l.href} onClick={() => setOpen(false)}>{l.label}</a>)}
+          {links.map((l) => <a key={l.href} href={to(l.href)} onClick={() => setOpen(false)}>{l.label}</a>)}
         </nav>
         <a href={brand.instagram} target="_blank" rel="noreferrer" className="mobile-menu-foot">{brand.handle}</a>
       </div>

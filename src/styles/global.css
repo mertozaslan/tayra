@@ -241,6 +241,39 @@ body::after {
 }
 .work-preview img.is-active { opacity: 1; transform: none; }
 
+/* ---------- Tüm işler ve iş detayı ---------- */
+.page-title { margin-top: 20px; font-family: var(--display); font-weight: 800; font-size: clamp(48px, 9vw, 152px); line-height: .9; letter-spacing: -.05em; }
+.works-page { padding: calc(140px + var(--safe-top)) var(--gutter) clamp(96px, 12vw, 180px); }
+.works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: clamp(40px, 5vw, 72px) clamp(20px, 2.4vw, 36px); }
+.work-card { display: grid; gap: 14px; }
+.work-card-media { overflow: hidden; border-radius: 8px; aspect-ratio: 4 / 5; background: #141414; }
+.work-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.work-card:hover .work-card-media img { transform: scale(1.04); }
+.work-card-meta { display: flex; justify-content: space-between; gap: 16px; font-family: var(--mono); font-size: 12px; color: var(--dim); text-transform: uppercase; letter-spacing: .1em; }
+.work-card-name { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 2.6vw, 40px); line-height: 1; letter-spacing: -.04em; }
+.work-card:hover .work-title { color: var(--accent); }
+
+.case-page { padding: calc(140px + var(--safe-top)) var(--gutter) 0; }
+.case-hero { display: grid; justify-items: start; gap: 0; }
+.case-back { margin-bottom: clamp(40px, 6vw, 80px); }
+.case-back span { display: inline-block; transition: transform .45s var(--ease-out); }
+.case-back:hover span { transform: translateX(-6px); }
+.case-lede { max-width: 30ch; margin-top: clamp(20px, 2.4vw, 32px); font-family: var(--display); font-weight: 500; font-size: clamp(22px, 2.4vw, 36px); line-height: 1.15; letter-spacing: -.02em; color: rgba(244, 242, 239, .72); }
+.case-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: clamp(56px, 8vw, 120px) 0 clamp(40px, 5vw, 64px); padding-top: 24px; border-top: 1px solid var(--line); }
+.case-facts dt { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .12em; color: var(--dim); margin-bottom: 8px; }
+.case-facts dd { font-size: clamp(16px, 1.3vw, 19px); }
+.case-body { max-width: 62ch; margin-left: auto; font-size: clamp(16px, 1.3vw, 19px); color: rgba(244, 242, 239, .8); }
+.case-body p + p { margin-top: 14px; }
+.case-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: clamp(72px, 10vw, 140px); }
+.case-shot { overflow: hidden; border-radius: 8px; background: #141414; }
+.case-shot:first-child { grid-column: 1 / -1; justify-self: center; width: min(100%, 880px); }
+.case-shot img { width: 100%; height: auto; }
+.case-next { display: grid; gap: 16px; margin-top: clamp(96px, 12vw, 180px); padding: clamp(40px, 6vw, 80px) 0 clamp(72px, 9vw, 128px); border-top: 1px solid var(--line); }
+.case-next-name { font-family: var(--display); font-weight: 800; font-size: clamp(36px, 6vw, 104px); line-height: .95; letter-spacing: -.045em; }
+.case-next-name > span[aria-hidden] { display: inline-block; color: var(--accent); transition: transform .45s var(--ease-out); }
+.case-next:hover .work-title { color: var(--accent); }
+.case-next:hover .case-next-name > span[aria-hidden] { transform: translateX(12px); }
+
 /* ---------- Hizmetler ---------- */
 .services { background: var(--panel); }
 .services-title {
@@ -429,6 +462,8 @@ main:not(:has(> .contact:last-child)) + .site-footer .footer-contact { border-to
   .work-roles { grid-column: 1; }
   .work-thumb { display: block; grid-column: 1 / -1; grid-row: 1; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; }
   .work-preview { display: none; }
+  .case-facts { grid-template-columns: 1fr; gap: 18px; }
+  .case-gallery { grid-template-columns: 1fr; }
   .svc-head { grid-template-columns: 36px 1fr 44px; gap: 12px; }
   .svc-body > div { padding-left: 48px; }
   .case, .case.is-alt { grid-template-columns: 1fr; }

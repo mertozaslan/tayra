@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { brand, works } from '../data/content.js'
+import { works } from '../data/content.js'
 import Img from '../components/Img.jsx'
+import { workPath } from '../pages/meta.js'
 
 // Büyük yazılı iş listesi, "Müşteri, İş" düzeni (Somesuch); masaüstünde imleci takip eden önizleme
 export default function Work() {
@@ -31,7 +32,7 @@ export default function Work() {
       <ul className="work-list" onPointerLeave={() => setActive(-1)}>
         {works.map((w, i) => (
           <li key={w.slug} data-reveal>
-            <a href={brand.instagram} target="_blank" rel="noreferrer" className="work-row" onPointerEnter={() => setActive(i)}>
+            <a href={workPath(w)} className="work-row" onPointerEnter={() => setActive(i)}>
               <span className="work-idx">{String(i + 1).padStart(2, '0')}</span>
               <span className="work-name">
                 {w.client}<span className="work-title">, {w.title}</span>
@@ -49,8 +50,8 @@ export default function Work() {
           <img key={w.slug} src={w.cover} alt="" className={i === active ? 'is-active' : ''} />
         ))}
       </div>
-      <a href={brand.instagram} target="_blank" rel="noreferrer" className="link-arrow" data-reveal>
-        Tüm işler <span aria-hidden="true">↗</span>
+      <a href="/isler" className="link-arrow" data-reveal>
+        Tüm işler <span aria-hidden="true">→</span>
       </a>
     </section>
   )

@@ -1,5 +1,9 @@
 // Her sayfanın adresi ve arama motoru bilgileri. Build sırasında scripts/prerender.js bu listeden
 // sayfa HTML'lerini ve sitemap.xml'i üretir; geliştirme sırasında main.jsx adresten sayfayı seçer.
+import { works } from '../data/content.js'
+
+export const workPath = (w) => `/isler/${w.slug}`
+
 export const pages = {
   home: {
     file: 'index.html',
@@ -9,6 +13,24 @@ export const pages = {
     index: true,
     priority: '1.0',
   },
+  works: {
+    file: 'isler.html',
+    path: '/isler',
+    title: 'İşler | Tayra Interactive',
+    description: `Tayra Interactive'in işleri: ${works.map((w) => w.client).join(', ')}. Marka filmi, kurgu, kurumsal kimlik ve sosyal medya.`,
+    index: true,
+    priority: '0.8',
+  },
+  // Her iş için bir detay sayfası; anahtar "work:<slug>"
+  ...Object.fromEntries(works.map((w) => [`work:${w.slug}`, {
+    file: `isler/${w.slug}.html`,
+    path: workPath(w),
+    title: `${w.client}, ${w.title} | Tayra Interactive`,
+    description: `${w.tagline} ${w.client} için ${w.roles.join(', ').toLocaleLowerCase('tr')}: Tayra Interactive.`,
+    image: w.cover,
+    index: true,
+    priority: '0.7',
+  }])),
   privacy: {
     file: 'gizlilik-politikasi.html',
     path: '/gizlilik-politikasi',

@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 import { pages } from './pages/meta.js'
 import Home from './pages/Home.jsx'
+import Works from './pages/Works.jsx'
+import WorkDetail from './pages/WorkDetail.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
 import Thanks from './pages/Thanks.jsx'
 import NotFound from './pages/NotFound.jsx'
 
-const views = { home: Home, privacy: Privacy, terms: Terms, thanks: Thanks, notFound: NotFound }
+const views = { home: Home, works: Works, privacy: Privacy, terms: Terms, thanks: Thanks, notFound: NotFound }
 
 export default function App({ page }) {
   useEffect(() => {
@@ -25,6 +27,7 @@ export default function App({ page }) {
     return () => io.disconnect()
   }, [page])
 
+  if (page.startsWith('work:')) return <WorkDetail key={page} slug={page.slice(5)} />
   const View = views[page] || NotFound
   return <View />
 }

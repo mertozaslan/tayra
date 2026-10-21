@@ -31,8 +31,15 @@ for (const [key, p] of Object.entries(pages)) {
   } else {
     html = html.replace(/\s*<link rel="canonical"[^>]*>/, '').replace(/\s*<meta property="og:url"[^>]*>/, '')
   }
+  if (p.image) {
+    const img = brand.url + p.image
+    html = swap(html, /(<meta property="og:image" content=")[^"]*/, `$1${img}`, 'og:image')
+    html = swap(html, /(<meta name="twitter:image" content=")[^"]*/, `$1${img}`, 'twitter:image')
+    html = html.replace(/\s*<meta property="og:image:(width|height|alt)"[^>]*>/g, '')
+  }
   html = swap(html, /<body data-page="[^"]*">/, `<body data-page="${key}">`, 'body')
   html = swap(html, '<div id="root"></div>', `<div id="root">${render(key)}</div>`, 'root')
+  fs.mkdirSync(path.dirname(path.join(dist, p.file)), { recursive: true })
   fs.writeFileSync(path.join(dist, p.file), html)
   console.log(`  ${p.file.padEnd(28)} ${p.index ? 'index' : 'noindex'}`)
 }
