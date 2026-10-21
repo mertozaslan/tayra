@@ -6,6 +6,12 @@ import ecoCover from '../assets/work/ecopotamia-cover.webp'
 import agLogo from '../assets/work/ankaragucu-logo.webp'
 import agTayra from '../assets/work/ankaragucu-tayra.webp'
 import agCover from '../assets/work/ankaragucu-cover.webp'
+import velCover from '../assets/work/veloura-cover.webp'
+import velTayra from '../assets/work/veloura-tayra.webp'
+import velLogo from '../assets/work/veloura-logo.webp'
+import wlCover from '../assets/work/waterland-cover.webp'
+import wlTayra from '../assets/work/waterland-tayra.webp'
+import wlSocial from '../assets/work/waterland-social.webp'
 
 export const brand = {
   name: 'Tayra Interactive',
@@ -37,6 +43,28 @@ export const manifesto = manifestoText.split(' ').map((w) => {
 export const reel = { poster: ecoTayra, video: null }
 
 export const works = [
+  {
+    slug: 'veloura',
+    client: 'Veloura Atelier',
+    title: 'Kurumsal Kimlik',
+    tagline: 'Bir kutunun üzerinde, bir kartın köşesinde, aynı özen.',
+    year: '2026',
+    roles: ['Logo', 'Ambalaj', 'Kurumsal Kimlik'],
+    cover: velCover,
+    images: [velCover, velTayra, velLogo],
+    isNew: true,
+  },
+  {
+    slug: 'waterland',
+    client: 'Waterland Car Wash',
+    title: 'Sosyal Medya Yönetimi',
+    tagline: 'Hizmetteki titizliği dijital iletişime taşıdık.',
+    year: '2026',
+    roles: ['Strateji', 'İçerik', 'Çekim', 'Kurgu'],
+    cover: wlCover,
+    images: [wlCover, wlTayra, wlSocial],
+    isNew: true,
+  },
   {
     slug: 'ankaragucu',
     client: 'Ankara Gücü',
